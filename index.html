@@ -24,7 +24,19 @@
 @media (max-width:390px){.top-left span:first-of-type{display:none}.top-left .top-sep{display:none}.welcome h1{font-size:32px}.welcome-actions .btn{padding:12px 11px}.lesson-card h3{font-size:13px}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 
-  </style>
+  
+
+/* FAZA 2 — preslišavanje. Usklađeno sa vizuelnim jezikom prve verzije. */
+.lesson-practice-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.inline-cta{font-weight:800;color:#296e59;white-space:nowrap}.inline-cta svg{width:13px;height:13px;vertical-align:middle}
+.practice-intro{background:#142438;color:#eaf5f2;padding:25px 27px;border-radius:14px;margin:22px 0 18px}.practice-intro-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.practice-intro h2{font-size:25px;letter-spacing:-.6px;margin:15px 0 10px}.practice-intro p{font-size:13px;line-height:1.7;color:#b2c8d0;max-width:750px}.practice-intro .small-action{color:#b8e3d2}.practice-eyebrow{font-size:10px;font-weight:850;letter-spacing:1.5px;color:#599a89;text-transform:uppercase}.practice-status{font-size:11px;color:#c1d4d4;background:#2b4052;padding:7px 10px;border-radius:18px}.small-action{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:750}.small-action svg{width:15px;height:15px}
+.practice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.practice-mode{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;min-height:294px}.mode-icon{width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:#e3f2eb;color:#26745b;border-radius:10px;margin-bottom:20px}.practice-mode h3{font-size:22px;margin:9px 0;letter-spacing:-.5px}.practice-mode p{font-size:12px;line-height:1.85;color:#6c8390;margin:0 0 17px}.mode-bottom{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.mode-bottom>span{color:#9aa9b0;font-size:10px}.practice-history{background:#fff;border-radius:12px;border:1px solid var(--line);padding:24px;margin:18px 0}.practice-history h3{font-size:16px;margin:0 0 15px}.history-empty{font-size:12px;color:#8598a0}.history-list{display:flex;flex-direction:column}.history-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 0;border-top:1px solid var(--line);font-size:12px}.history-row:first-child{border-top:0}.history-row>span{color:#899aa2}.history-row>strong{color:#345c56;font-weight:700;font-size:11px;text-align:right}
+.practice-page,.results-page{max-width:880px;margin:auto}.practice-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 16px}.practice-top>span{font-size:12px;font-weight:850;color:#326f5c}.quiz-progress{height:7px;background:#e6edea;border-radius:9px;overflow:hidden;margin-bottom:22px}.quiz-progress div{height:100%;background:#68b09a;transition:width .3s}.question-panel{padding:31px 33px;background:#fff;border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow)}.question-label{font-size:10px;color:#649b88;letter-spacing:1.3px;font-weight:850}.question-panel h1{font-size:clamp(24px,3.6vw,36px);line-height:1.25;margin:15px 0 30px;letter-spacing:-.8px}.answer-options{display:grid;gap:10px}.answer-option{display:flex;gap:13px;align-items:center;width:100%;text-align:left;background:#fafcfb;color:#384d5b;border:1px solid #e3ece9;border-radius:10px;padding:14px 16px;min-height:62px;font-size:13px;line-height:1.5;transition:border .12s, background .12s}.answer-option:hover:not(:disabled){background:#f0f7f3;border-color:#95c6b6}.answer-option.selected{background:#eaf7f2;border-color:#58a78e}.answer-option.is-correct{background:#e7f7ee!important;border-color:#54a67b!important}.answer-option.is-wrong{background:#fdf0ee!important;border-color:#d89a91!important}.answer-option:disabled{cursor:default;opacity:1}.option-letter{width:31px;height:31px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid #cddbd6;background:#fff;border-radius:8px;color:#377c67;font-weight:800}.quiz-action{display:flex;justify-content:flex-end;margin-top:19px}.quiz-action button:disabled{opacity:.45;cursor:not-allowed;transform:none}.answer-explanation{padding:19px 21px;margin-top:20px;border-radius:10px;background:#eff6f2;border-left:3px solid #57a482}.answer-explanation.was-incorrect{background:#fdf4f2;border-left-color:#c78374}.answer-explanation strong{font-size:14px}.answer-explanation p{font-size:12px;color:#617884;line-height:1.8}.feedback-refs{display:flex;gap:7px;align-items:center;flex-wrap:wrap;color:#80919c;font-size:10px;margin-top:13px}.quiz-caption{font-size:11px;color:#95a5aa;line-height:1.6;margin:14px 0 25px}
+.oral-instruction{font-size:13px;line-height:1.8;color:#768c95;margin:-10px 0 20px}.oral-label{display:block;font-size:11px;font-weight:750;color:#3c7265;margin-bottom:8px}.oral-textarea{width:100%;padding:15px;min-height:112px;resize:vertical;border:1px solid #d6e2df;background:#fafcfb;border-radius:9px;color:#223d49;line-height:1.7;font:inherit;font-size:13px}.oral-textarea:focus{outline:2px solid #addbca;outline-offset:1px}.oral-model{margin:20px 0 22px;padding:22px;background:#eaf5f0;border-radius:12px;border:1px solid #c8e4d9}.oral-model>p{font-size:13px;line-height:1.87;color:#395d54}.oral-model h3{font-size:14px;margin:22px 0 12px}.oral-model ul{list-style:none;padding:0;display:grid;gap:9px}.oral-model li{font-size:12px;color:#45685e;line-height:1.5;display:flex;gap:8px}.oral-model li svg{width:16px;height:16px;color:#288569}.oral-grade-title{font-size:14px;margin:20px 0 11px}.oral-grade-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.grade-btn{background:#fff;border:1px solid #cbdcd5;border-radius:9px;min-height:70px;padding:12px 8px;text-align:center}.grade-btn:hover,.grade-btn:focus-visible{background:#e1f2e9;border-color:#76af95}.grade-btn strong{display:block;font-size:12px;color:#255749}.grade-btn span{display:block;font-size:10px;color:#778b8f;margin-top:6px;line-height:1.4}
+.results-hero{display:flex;align-items:center;justify-content:space-between;gap:20px;background:#142438;color:#fff;border-radius:15px;padding:35px;margin:20px 0}.results-hero p{font-size:12px;color:#b7d6cc}.results-hero h1{font-size:66px;letter-spacing:-3px;margin:12px 0 8px}.results-hero h1 span{font-size:26px;color:#b6d1d1;letter-spacing:0}.results-hero strong{display:block;font-size:14px;color:#b5e7d6}.results-hero small{display:block;max-width:300px;margin-top:16px;font-size:10px;color:#b3c5ca;line-height:1.6}.results-ring{width:130px;height:130px;flex-shrink:0;border-radius:50%;background:conic-gradient(#a9dfcd var(--score),#405166 var(--score));display:grid;place-items:center;font-size:21px;font-weight:750;position:relative;isolation:isolate}.results-ring::after{content:'';position:absolute;inset:13px;border-radius:50%;background:#142438;z-index:-1}.results-actions{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 25px}.answer-review{display:grid;gap:12px}.review-row{display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-top:1px solid #edf1ef}.review-number{width:28px;height:28px;flex-shrink:0;display:grid;place-items:center;border-radius:50%;background:#d9f2e3;color:#217656;font-size:14px;font-weight:850}.review-number.bad{background:#f9e3df;color:#aa594b}.review-number.partial{background:#fff0ce;color:#88672c}.review-row strong{font-size:12px;color:#2f4551;line-height:1.5}.review-row p{font-size:11px;color:#738991;line-height:1.65;margin:6px 0 0}.oral-summary{background:#142438;color:#fff;border-radius:14px;padding:32px;margin:20px 0}.oral-summary h1{font-size:38px;margin:0 0 7px}.oral-summary>p{color:#abc4cc;font-size:12px;line-height:1.75}.oral-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:30px}.oral-stats>div{border:1px solid #445d68;border-radius:10px;padding:16px}.oral-stats strong{display:block;color:#bbebd8;font-size:32px}.oral-stats span{font-size:10px;color:#b9d0cf}
+@media(max-width:700px){.practice-grid{grid-template-columns:1fr}.practice-mode{min-height:0}.practice-intro{padding:21px}.practice-intro h2{font-size:21px}.question-panel{padding:22px 17px}.question-panel h1{font-size:25px}.answer-option{padding:12px;gap:10px;font-size:12px}.quiz-action .btn{width:100%}.oral-grade-grid{gap:5px}.grade-btn{padding:12px 4px}.grade-btn strong{font-size:11px}.grade-btn span{font-size:9px}.results-hero{padding:23px}.results-hero h1{font-size:52px}.results-ring{width:95px;height:95px;font-size:17px}.results-ring::after{inset:10px}.practice-history{padding:18px}.lesson-practice-actions .btn{flex-grow:1}}
+@media(max-width:390px){.practice-top{align-items:flex-start;flex-direction:column}.question-panel h1{font-size:23px}.results-hero{gap:9px}.results-ring{height:77px;width:77px}.results-hero h1{font-size:45px}}
+
+</style>
 </head>
 <body>
   <svg class="svg-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
@@ -51,7 +63,7 @@
       <nav aria-label="Glavna navigacija">
         <a href="#/" id="nav-home" class="nav-item active"><svg><use href="#i-grid"/></svg><span>Pregled</span></a>
         <a href="#/lekcije" id="nav-lessons" class="nav-item"><svg><use href="#i-book"/></svg><span>Moje lekcije</span></a>
-        <span class="nav-item nav-disabled"><svg><use href="#i-spark"/></svg><span>Preslišavanje</span><em>uskoro</em></span>
+        <a href="#/preslisavanje" id="nav-practice" class="nav-item"><svg><use href="#i-spark"/></svg><span>Preslišavanje</span></a>
       </nav>
       <div class="sidebar-bottom">
         <span class="sidebar-rule"></span>
@@ -59,7 +71,7 @@
         <strong>Hirurški pristupi</strong>
         <small>Hoppenfeld · AO · Orthobullets</small>
         <div class="small-progress"><div id="sidebar-progress"></div></div>
-        <span class="sidebar-foot">Faza 1 · čitanje i beleške</span>
+        <span class="sidebar-foot">Faza 2 · test i usmeno preslišavanje</span>
       </div>
     </aside>
     <main class="main">
@@ -68,13 +80,13 @@
         <span class="top-pill">01 / 12 KOLOKVIJUMA</span>
       </header>
       <div id="app" class="content" aria-live="polite"></div>
-      <footer class="footer"><span>OrthoStudy · Verzija 0.1</span><span>Za učenje uz mentora, ne za samostalno izvođenje zahvata.</span></footer>
+      <footer class="footer"><span>OrthoStudy · Verzija 0.2</span><span>Za učenje uz mentora, ne za samostalno izvođenje zahvata.</span></footer>
     </main>
   </div>
   <script>
 /* Sadržaj je razdvojen od interfejsa, tako da se buduće lekcije dodaju ovde. */
 window.ORTHO_DATA = {
-  version: "0.1.0",
+  version: "0.2.0",
   references: {
     ao: { label: "AO Surgery Reference", url: "https://surgeryreference.aofoundation.org/orthopedic-trauma/adult-trauma/femoral-shaft/approach/lateral-approach", detail: "Lateral approach to the femoral shaft" },
     ob: { label: "Orthobullets", url: "https://www.orthobullets.com/approaches/12024/femur-lateral-approach", detail: "Femur Lateral Approach" },
@@ -140,6 +152,311 @@ window.ORTHO_DATA = {
   ]
 };
 
+window.ORTHO_DATA.practice = {
+  "lateralni-pristup-femuru": {
+    "quiz": [
+      {
+        "id": "fem-q01",
+        "topic": "Orijentiri",
+        "q": "Koja dva koštana orijentira AO koristi za planiranje linije lateralne incizije duž femura?",
+        "options": [
+          "Trochanter major i lateralni epikondil femura",
+          "Spina iliaca anterior superior i tuberositas tibiae",
+          "Trochanter minor i medijalni epikondil femura",
+          "Tuberculum adductorium i patela"
+        ],
+        "correct": 0,
+        "why": "AO opisuje longitudinalnu inciziju duž zamišljene linije između velikog trohantera i lateralnog epikondila femura.",
+        "refs": [
+          "ao"
+        ]
+      },
+      {
+        "id": "fem-q02",
+        "topic": "Planiranje",
+        "q": "Kako se određuje dužina incizije kod lateralnog pristupa dijafizi femura?",
+        "options": [
+          "Uvek 10 cm",
+          "Uvek od trohantera do kolena",
+          "Prema konkretnoj patologiji i potrebnoj ekspoziciji",
+          "Prema telesnoj visini bolesnika"
+        ],
+        "correct": 2,
+        "why": "Dužina incizije se individualizuje prema planiranom zahvatu i delu kosti koji treba prikazati. Nema univerzalne mere.",
+        "refs": [
+          "ao",
+          "hop"
+        ]
+      },
+      {
+        "id": "fem-q03",
+        "topic": "Slojevi",
+        "q": "Koji je ispravan redosled do duboke ravni lateralnog pristupa?",
+        "options": [
+          "Koža → m. sartorius → fascia lata → femur",
+          "Koža → potkoža → fascia lata → fascija m. vastus lateralis → izabrana duboka ravan",
+          "Koža → potkoža → m. gluteus medius → acetabulum",
+          "Koža → tractus iliotibialis → m. adductor magnus → femur"
+        ],
+        "correct": 1,
+        "why": "Posle kože i potkože otvara se fascia lata, zatim pristupa fasciji vastus lateralis i izabranom načinu duboke disekcije.",
+        "refs": [
+          "ao",
+          "hop"
+        ]
+      },
+      {
+        "id": "fem-q04",
+        "topic": "Anatomija",
+        "q": "Koji nerv inerviše m. vastus lateralis?",
+        "options": [
+          "N. obturatorius",
+          "N. ischiadicus",
+          "N. gluteus superior",
+          "N. femoralis"
+        ],
+        "correct": 3,
+        "why": "Vastus lateralis pripada kvadricepsu i inervisan je granama n. femoralis.",
+        "refs": [
+          "hop",
+          "ob"
+        ]
+      },
+      {
+        "id": "fem-q05",
+        "topic": "Ravni",
+        "q": "Zašto longitudinalno razdvajanje m. vastus lateralis nije prava internervna ravan?",
+        "options": [
+          "Zato što se pristupa kroz jedan mišić duž njegovih vlakana",
+          "Zato što je inervacija isključivo senzitivna",
+          "Zato što u natkolenici nema motornih nerava",
+          "Zato što se disekcija vodi između dva mišića sa različitom inervacijom"
+        ],
+        "correct": 0,
+        "why": "Muscle-splitting prolazi unutar vastus lateralis, a ne između dva mišića odvojenih nervnih teritorija.",
+        "refs": [
+          "hop",
+          "ob"
+        ]
+      },
+      {
+        "id": "fem-q06",
+        "topic": "AO tehnika",
+        "q": "Prema AO, gde se otvara fascija m. vastus lateralis u odnosu na lateralni intermuskularni septum?",
+        "options": [
+          "Oko 1 cm posteriorno od septuma",
+          "Oko 1 cm anteriorno od septuma",
+          "Direktno preko medijalnog septuma",
+          "Na prednjem rubu m. sartorius"
+        ],
+        "correct": 1,
+        "why": "AO navodi otvaranje fascije vastus lateralis približno 1 cm ispred lateralnog intermuskularnog septuma, nakon anteromedijalne retrakcije mišića.",
+        "refs": [
+          "ao"
+        ]
+      },
+      {
+        "id": "fem-q07",
+        "topic": "AO tehnika",
+        "q": "Šta karakteriše AO varijantu duboke disekcije?",
+        "options": [
+          "Odvajanje m. gluteus medius od velikog trohantera",
+          "Razdvajanje tetive m. iliopsoas",
+          "Mobilizacija vastus lateralis sa septuma i regije linea aspera",
+          "Rutinsko otvaranje zgloba kuka"
+        ],
+        "correct": 2,
+        "why": "U AO opisu vastus lateralis se odmiče sa lateralnog intermuskularnog septuma i u regiji linea aspera, uz očuvanje kontrole perforatora.",
+        "refs": [
+          "ao"
+        ]
+      },
+      {
+        "id": "fem-q08",
+        "topic": "Vaskularna anatomija",
+        "q": "Od koje arterije najvažnije potiču perforantne grane u riziku?",
+        "options": [
+          "A. tibialis anterior",
+          "A. profunda femoris",
+          "A. circumflexa iliaca profunda",
+          "A. poplitea"
+        ],
+        "correct": 1,
+        "why": "Perforantne grane a. profunda femoris prolaze kroz septum i/ili mišić, pa predstavljaju važan izvor mogućeg krvarenja.",
+        "refs": [
+          "ao",
+          "hop",
+          "ob"
+        ]
+      },
+      {
+        "id": "fem-q09",
+        "topic": "Bezbednost",
+        "q": "Zašto avulzija perforantnog suda neposredno uz septum može dovesti do teže kontrolisanog krvarenja?",
+        "options": [
+          "Zato što je svaka grana završna arterija",
+          "Zato što se obavezno razvije akutni kompartment sindrom",
+          "Zato što je krvni sud bez mišićne potporne ovojnice",
+          "Zato što se zadnji kraj suda može povući iza septuma u posteriorni kompartment"
+        ],
+        "correct": 3,
+        "why": "AO posebno upozorava da se zadnji kraj pokidanog perforatora može retrahovati posteriorno, uz rizik od teško uočljivog krvarenja.",
+        "refs": [
+          "ao",
+          "hop"
+        ]
+      },
+      {
+        "id": "fem-q10",
+        "topic": "Poređenje izvora",
+        "q": "Koja tvrdnja pravilno navodi razliku između AO i Orthobullets opisa ekspozicije kosti?",
+        "options": [
+          "AO opisuje ekstraperiostalno, Orthobullets navodi subperiostalnu disekciju",
+          "Oba izvora zahtevaju isključivo subperiostalnu disekciju",
+          "Orthobullets zabranjuje splitting vastus lateralis",
+          "AO opisuje isključivo direktni lateralni pristup zglobu kuka"
+        ],
+        "correct": 0,
+        "why": "U dostupnim opisima AO izričito navodi ekstraperiostalnu ekspoziciju, a Orthobullets pominje subperiostalnu disekciju. Razliku treba jasno vezati za izvor.",
+        "refs": [
+          "ao",
+          "ob"
+        ]
+      }
+    ],
+    "oral": [
+      {
+        "id": "fem-o01",
+        "title": "Indikacije, položaj i orijentiri",
+        "q": "Opiši indikacije za lateralni pristup dijafizi femura, položaj bolesnika, orijentire i planiranje incizije.",
+        "answer": "Lateralna ekspozicija koristi se za odabrane otvorene procedure na femuru, uključujući pojedine prelome, osteotomije, infekcije i biopsije. Mogući su leđni i bočni položaj; za dijafizu je bočni položaj jedna od opcija, u zavisnosti od repozicije i fluoroskopije. Orijentiri su veliki trohanter i lateralni epikondil. Incizija je longitudinalna; dužina zavisi od potrebne ekspozicije.",
+        "rubric": [
+          "Navodi najmanje dve smislene indikacije",
+          "Razlikuje položaj za dijafizu od konteksta trohanternih preloma",
+          "Identifikuje veliki trohanter i lateralni epikondil",
+          "Ne tvrdi da postoji univerzalna dužina incizije"
+        ],
+        "refs": [
+          "ao",
+          "hop",
+          "ob"
+        ]
+      },
+      {
+        "id": "fem-o02",
+        "title": "Slojevi i ključne strukture",
+        "q": "Prođi naglas kroz slojeve od kože do lateralne kortikalne površine femura i označi glavne anatomske strukture.",
+        "answer": "Koža i potkožno tkivo, potom fascia lata / tractus iliotibialis, fascija m. vastus lateralis, pa izabrana duboka ravan kroz mišić ili uz lateralni septum do lateralne površine femura. Treba poznavati položaj vastus lateralis, septuma i pripoja u regiji linea aspera.",
+        "rubric": [
+          "Redosled površinskih slojeva je tačan",
+          "Imenuje vastus lateralis i njegovu fasciju",
+          "Pominje septum i linea aspera",
+          "Ne meša sa pristupom kuku"
+        ],
+        "refs": [
+          "ao",
+          "hop"
+        ]
+      },
+      {
+        "id": "fem-o03",
+        "title": "Inervacija i internervna ravan",
+        "q": "Ko inerviše m. vastus lateralis? Da li splitting ovog mišića koristi pravu internervnu ravan i zašto?",
+        "answer": "Vastus lateralis inerviše n. femoralis. Razdvajanje njegovih vlakana je intramuskularni pristup, ne prolaz između dva mišića različite inervacije. Odsustvo prave internervne ravni ne znači da povreda motoričkih grana nije moguća.",
+        "rubric": [
+          "Tačno navodi n. femoralis",
+          "Objašnjava razliku intramuskularne i internervne ravni",
+          "Ne tvrdi apsolutnu odsutnost neurološkog rizika"
+        ],
+        "refs": [
+          "hop",
+          "ob"
+        ]
+      },
+      {
+        "id": "fem-o04",
+        "title": "AO operativni sled",
+        "q": "Opiši AO pristup od otvaranja fascia lata do ekstraperiostalne ekspozicije femura.",
+        "answer": "Posle longitudinalnog otvaranja fascia lata, vastus lateralis se tupo odvaja od njene duboke strane, retrahuje anteromedijalno, a njegova fascija otvara oko 1 cm anteriorno od lateralnog intermuskularnog septuma. Periostalnim elevatorom mišić se mobiliše sa septuma i regije linea aspera, uz identifikaciju i kontrolu perforatora, pa se femur prikazuje ekstraperiostalno.",
+        "rubric": [
+          "Fascia lata pre duboke fascije",
+          "Tupo odvajanje i anteromedijalna retrakcija",
+          "Tačan odnos reza fascije prema septumu",
+          "Mobilizacija sa septuma uz kontrolu perforatora",
+          "Ekstraperiostalna ekspozicija"
+        ],
+        "refs": [
+          "ao"
+        ]
+      },
+      {
+        "id": "fem-o05",
+        "title": "Dve tehnike duboke disekcije",
+        "q": "Uporedi AO odizanje vastus lateralis sa septuma sa longitudinalnim muscle-splitting pristupom.",
+        "answer": "AO razvija ravan uz septum i pomera vastus lateralis anteromedijalno. U splitting tehnici fascija mišića se otvara i vlakna vastus lateralis longitudinalno razdvajaju. Kod splitting-a nema prave internervne ravni. Orthobullets navodi obe mogućnosti; Hoppenfeld lateralni pristup proksimalnom femuru opisuje kao splitting, dok posterolateralni pristup izdvaja posebno.",
+        "rubric": [
+          "Jasno razlikuje duboke ravni",
+          "Tačno objašnjava splitting",
+          "Pominje internervnu ravan",
+          "Ne poistovećuje različito imenovane pristupe"
+        ],
+        "refs": [
+          "ao",
+          "hop",
+          "ob"
+        ]
+      },
+      {
+        "id": "fem-o06",
+        "title": "Perforatori i hemostaza",
+        "q": "Odakle dolaze perforantni sudovi, gde se nalaze i zbog čega su posebno rizični pri ovom pristupu?",
+        "answer": "Važne perforantne grane potiču od a. profunda femoris. Prolaze kroz lateralni intermuskularni septum od pozadi prema napred i nalaze se blizu femura. Nekontrolisano kidanje može uzrokovati povlačenje zadnjeg kraja iza septuma i teško uočljivo krvarenje; zato se identifikuju i po potrebi ligiraju ili koagulišu pre avulzije.",
+        "rubric": [
+          "Tačno navodi a. profunda femoris",
+          "Opisuje njihov odnos sa septumom",
+          "Objašnjava retrakciju krvnog suda",
+          "Navodi princip prethodne identifikacije i kontrole"
+        ],
+        "refs": [
+          "ao",
+          "hop",
+          "ob"
+        ]
+      },
+      {
+        "id": "fem-o07",
+        "title": "Odnos prema periostu",
+        "q": "Kako AO i Orthobullets opisuju odnos disekcije prema periostu? Zašto je važno razdvojiti njihove tvrdnje?",
+        "answer": "AO Surgery Reference za svoju varijantu opisuje ekstraperiostalnu ekspoziciju femoralne dijafize. U Orthobullets opisu ekspozicija se nastavlja subperiostalnom disekcijom. Termin se navodi uz odgovarajući izvor, bez predstavljanja tih rečenica kao jednog identičnog operativnog koraka.",
+        "rubric": [
+          "Tačno navodi AO — ekstraperiostalno",
+          "Tačno navodi Orthobullets — subperiostalno",
+          "Ne predstavlja jednu varijantu kao univerzalno obaveznu"
+        ],
+        "refs": [
+          "ao",
+          "ob"
+        ]
+      },
+      {
+        "id": "fem-o08",
+        "title": "Proširenja i diferenciranje pristupa",
+        "q": "Kako se može proširiti ekspozicija proksimalno i kako razlikuješ lateralni pristup dijafizi, Hoppenfeldov posterolateralni pristup i direktni lateralni pristup kuku?",
+        "answer": "AO za potrebno proksimalno proširenje opisuje L-oblikovano oslobađanje porekla vastus lateralis radi prikaza subtrohanterne regije. Hoppenfeld prikazuje posterolateralni pristup kao poseban pristup koji prati lateralni intermuskularni septum. Direktni lateralni (transglutealni) pristup zglobu kuka je zaseban pristup i ne treba ga mešati sa ekspozicijom dijafize.",
+        "rubric": [
+          "Pominje proksimalno L-oslobađanje prema AO",
+          "Prepoznaje posterolateralni pristup kao zaseban pojam",
+          "Razlikuje transglutealni pristup kuku od dijafize"
+        ],
+        "refs": [
+          "ao",
+          "hop"
+        ]
+      }
+    ]
+  }
+};
+
   </script>
   <script>
 (() => {
@@ -156,9 +473,11 @@ window.ORTHO_DATA = {
       return {
         completed: stored && typeof stored.completed === 'object' ? stored.completed : {},
         notes: stored && typeof stored.notes === 'object' ? stored.notes : {},
+        quizHistory: stored && typeof stored.quizHistory === 'object' && stored.quizHistory ? stored.quizHistory : {},
+        oralHistory: stored && typeof stored.oralHistory === 'object' && stored.oralHistory ? stored.oralHistory : {},
         updated: stored?.updated || null
       };
-    } catch { return {completed:{},notes:{},updated:null}; }
+    } catch { return {completed:{},notes:{},quizHistory:{},oralHistory:{},updated:null}; }
   }
   function persist() {
     state.updated = new Date().toISOString();
@@ -169,6 +488,10 @@ window.ORTHO_DATA = {
   const activeLessons = data.lessons.filter(x => x.status === 'ready');
   const doneCount = () => activeLessons.filter(x => state.completed[x.id]).length;
   const completion = () => activeLessons.length ? Math.round(doneCount() / activeLessons.length * 100) : 0;
+  const practiceFor = lesson => data.practice?.[lesson.id];
+  const bestQuick = id => Math.max(0,...(state.quizHistory[id] || []).map(r=>r.score));
+  const lastQuick = id => (state.quizHistory[id] || []).slice(-1)[0];
+
 
   function lessonCard(lesson) {
     const enabled = lesson.status === 'ready';
@@ -191,7 +514,7 @@ window.ORTHO_DATA = {
       <div class="eyebrow"><span class="eyebrow-line"></span> TVOJA BAZA ZNANJA</div>
       <h1>Uči sistematično.<br/><em>Pamti dugoročno.</em></h1>
       <p>Jedno mesto za hirurške pristupe, proverene izvore i tvoje beleške. Sadržaj raste zajedno sa tvojom specijalizacijom.</p>
-      <div class="welcome-actions"><a class="btn btn-primary" href="#/lekcija/lateralni-pristup-femuru">Otvori prvu lekciju ${svg('arrow')}</a><a class="btn btn-quiet" href="#/lekcije">Sve lekcije ${svg('chevron')}</a></div>
+      <div class="welcome-actions"><a class="btn btn-primary" href="#/lekcija/lateralni-pristup-femuru">Otvori prvu lekciju ${svg('arrow')}</a><a class="btn btn-quiet" href="#/preslisavanje">Preslišavanje ${svg('chevron')}</a></div>
       ${heroDecor()}
     </section>
     <section class="stats" aria-label="Napredak">
@@ -201,15 +524,15 @@ window.ORTHO_DATA = {
     </section>
     <section class="section-head"><div><div class="eyebrow subdued">KOLOKVIJUM 01</div><h2>Hirurški pristupi</h2><p>Prve tri lekcije iz već obrađenog gradiva.</p></div><a class="text-link" href="#/lekcije">Pogledaj sve ${svg('arrow')}</a></section>
     <div class="lesson-list">${data.lessons.map(lessonCard).join('')}</div>
-    <div class="roadmap"><div class="roadmap-head">${svg('spark')} <strong>Šta sledi?</strong><span>FAZA 2</span></div><p>Interaktivno preslišavanje, pitanja različite težine i ocenjivanje odgovora. Za sada je fokus na pouzdanoj bazi lekcija.</p></div>`;
+    <div class="roadmap"><div class="roadmap-head">${svg('spark')} <strong>Preslišavanje je dostupno</strong><span>FAZA 2</span></div><p>Za prvu lekciju dostupno je 10 test-pitanja sa objašnjenjima i 8 pitanja za usmeno preslišavanje uz kriterijume za samoprocenu. <a class="inline-cta" href="#/preslisavanje">Otvori preslišavanje ${svg('arrow')}</a></p></div>`;
   }
   function list() {
     document.title = 'OrthoStudy — Moje lekcije';
     setNav('lessons', 'Moje lekcije');
-    app.innerHTML = `<div class="page-header fade-in"><div class="eyebrow"><span class="eyebrow-line"></span> TVOJ SADRŽAJ</div><h1>Moje lekcije<span class="punct">.</span></h1><p>Kolokvijum 01 · Hirurški pristupi u ortopediji. Odaberi lekciju za čitanje i beleške.</p></div>
+    app.innerHTML = `<div class="page-header fade-in"><div class="eyebrow"><span class="eyebrow-line"></span> TVOJ SADRŽAJ</div><h1>Moje lekcije<span class="punct">.</span></h1><p>Kolokvijum 01 · Hirurški pristupi u ortopediji. Odaberi lekciju za čitanje, beleške i proveru znanja.</p></div>
     <div class="list-summary"><span class="chapter-number">01</span><div><strong>Hirurški pristupi</strong><p>${activeLessons.length} dostupna · ${data.lessons.length-activeLessons.length} u pripremi</p></div><div class="list-count">${doneCount()} / ${activeLessons.length} pročitano</div></div>
     <div class="lesson-list">${data.lessons.map(lessonCard).join('')}</div>
-    <div class="notice light">${svg('note')} <span>U prvoj fazi možete čitati lekciju, označiti da je pročitana i sačuvati lične beleške. Testovi se dodaju kasnije.</span></div>`;
+    <div class="notice light">${svg('note')} <span>Prva lekcija sada ima i brzi test i usmeno preslišavanje. Ostale lekcije dodajemo postepeno.</span></div>`;
   }
   function refChip(id) {
     const r = data.references[id];
@@ -229,6 +552,7 @@ window.ORTHO_DATA = {
     app.innerHTML = `<div class="lesson-page fade-in"><a href="#/lekcije" class="back-link">${svg('back')} Sve lekcije</a>
       <header class="lesson-hero"><div class="eyebrow"><span class="eyebrow-line"></span> KOLOKVIJUM 01 / LEKCIJA ${lesson.ordinal}</div><h1>${clean(lesson.title)}<span class="punct">.</span></h1><p class="latin-title">${clean(lesson.latin)}</p><p class="lesson-lead">${clean(lesson.lead)}</p>
         <div class="lesson-hero-actions"><button id="mark-done-top" type="button" class="btn ${finished?'btn-completed':'btn-primary'}">${svg('check')} ${finished?'Označeno kao pročitano':'Označi kao pročitano'}</button><span>${svg('clock')} Oko ${lesson.duration} min čitanja</span></div>
+        ${practiceFor(lesson) ? `<div class="lesson-practice-actions"><a class="btn btn-primary" href="#/test/${lesson.id}">Brzi test · 10 pitanja ${svg('arrow')}</a><a class="btn btn-outline" href="#/usmeno/${lesson.id}">Usmeno preslišavanje ${svg('chevron')}</a></div>` : ''}
       </header>
       <div class="lesson-layout"><article class="article">
         <section class="summary-card"><div class="summary-kicker">${svg('spark')} ZAPAMTI ZA 60 SEKUNDI</div><h2>Četiri stvari koje moraš znati</h2><div class="takeaways">${lesson.takeaways.map((item,i)=>`<div class="takeaway"><span>${String(i+1).padStart(2,'0')}</span><div><strong>${clean(item.strong)}</strong><p>${clean(item.text)}</p></div></div>`).join('')}</div></section>
@@ -269,16 +593,146 @@ window.ORTHO_DATA = {
       if(target) target.scrollIntoView({behavior: 'smooth',block:'start'});
     }));
   }
+
+  // Preslišavanje: pitanje, objašnjenje i samoprocena koriste lokalne podatke; nema AI ocenjivanja.
+  function historyDate(iso) {
+    try {return new Date(iso).toLocaleDateString('sr-RS',{day:'2-digit',month:'2-digit',year:'numeric'});} catch {return '—';}
+  }
+  function historyRows(list, oralMode) {
+    if (!list?.length) return `<p class="history-empty">Još nema završenih pokušaja na ovom uređaju.</p>`;
+    return `<div class="history-list">${list.slice(-5).reverse().map(item=>`<div class="history-row"><span>${historyDate(item.at)}</span><strong>${oralMode ? `${item.known} znam · ${item.partial} delimično · ${item.review} ponoviti` : `${item.score}/${item.total} · ${Math.round(item.score/item.total*100)}%`}</strong></div>`).join('')}</div>`;
+  }
+  function practiceIndex() {
+    document.title='OrthoStudy — Preslišavanje';
+    setNav('practice','Preslišavanje');
+    const lesson=data.lessons.find(x=>x.id==='lateralni-pristup-femuru');
+    const all=practiceFor(lesson);
+    const last=lastQuick(lesson.id);
+    app.innerHTML=`<div class="page-header fade-in"><div class="eyebrow"><span class="eyebrow-line"></span> KOLOKVIJUM 01 / PRESLIŠAVANJE</div><h1>Proveri znanje<span class="punct">.</span></h1><p>Dva načina rada sa pitanjima iz lateralnog pristupa dijafizi femura. Svako pitanje ima objašnjenje ili model odgovora i označene izvore.</p></div>
+      <section class="practice-intro"><div class="practice-intro-head"><span class="practice-eyebrow">DOSTUPNA LEKCIJA</span><span class="practice-status">01 / 03</span></div><h2>${clean(lesson.title)}</h2><p>Pre testa možeš da ponoviš gradivo; rezultat testa predstavlja proveru razumevanja, ne ocenu sposobnosti izvođenja zahvata.</p><a class="small-action" href="#/lekcija/${lesson.id}">${svg('book')} Vrati se na lekciju</a></section>
+      <div class="practice-grid">
+        <article class="practice-mode"><div class="mode-icon">${svg('check')}</div><div class="practice-eyebrow">10 PITANJA · PONUĐENI ODGOVORI</div><h3>Brzi test</h3><p>Izaberi odgovor, proveri objašnjenje i na kraju vidi rezultat, greške i istoriju pokušaja.</p><div class="mode-bottom"><span>${last ? `Poslednji rezultat: ${last.score}/${last.total}` : 'Još nije rađen'}</span><a class="btn btn-primary" href="#/test/${lesson.id}">Pokreni test ${svg('arrow')}</a></div></article>
+        <article class="practice-mode"><div class="mode-icon">${svg('note')}</div><div class="practice-eyebrow">8 PITANJA · SAMOPROCENA</div><h3>Usmeno preslišavanje</h3><p>Odgovori svojim rečima, otkrij model odgovora, proveri kriterijume i sam proceni znanje.</p><div class="mode-bottom"><span>Bez automatske AI ocene</span><a class="btn btn-primary" href="#/usmeno/${lesson.id}">Počni usmeno ${svg('arrow')}</a></div></article>
+      </div>
+      <div class="practice-history"><h3>Istorija brzog testa</h3>${historyRows(state.quizHistory[lesson.id],false)}</div>
+      <div class="practice-history"><h3>Istorija usmenog preslišavanja</h3>${historyRows(state.oralHistory[lesson.id],true)}</div>
+      <div class="notice light">${svg('note')} <span>Beleške, oznake pročitanog i rezultati ostaju u ovom pregledaču i na ovom uređaju. Ne sinhronizuju se između telefona i računara.</span></div>`;
+  }
+  function quickTest(lesson) {
+    document.title='OrthoStudy — Brzi test';
+    setNav('practice','Brzi test');
+    const bank=practiceFor(lesson).quiz;
+    const answers=[];
+    let pos=0, selected=null, confirmed=false;
+    function showQuestion() {
+      const q=bank[pos]; selected=null; confirmed=false;
+      const pct=Math.round((pos)/bank.length*100);
+      app.innerHTML=`<div class="practice-page fade-in"><a href="#/preslisavanje" class="back-link">${svg('back')} Preslišavanje</a>
+        <div class="practice-top"><div class="practice-eyebrow">BRZI TEST · ${clean(lesson.title)}</div><span>${pos+1} / ${bank.length}</span></div>
+        <div class="quiz-progress"><div style="width:${pct}%"></div></div>
+        <section class="question-panel"><div class="question-label">${clean(q.topic)} · JEDAN TAČAN ODGOVOR</div><h1>${clean(q.q)}</h1>
+        <div id="answer-options" class="answer-options" role="radiogroup" aria-label="Ponuđeni odgovori">${q.options.map((opt,i)=>`<button class="answer-option" type="button" data-choice="${i}" role="radio" aria-checked="false"><span class="option-letter">${'ABCD'[i]}</span><span>${clean(opt)}</span></button>`).join('')}</div>
+        <div id="answer-feedback" aria-live="polite"></div><div class="quiz-action"><button id="confirm-choice" class="btn btn-primary" type="button" disabled>Proveri odgovor ${svg('check')}</button></div></section>
+        <p class="quiz-caption">Odgovori se čuvaju u istoriji tek kada završiš svih 10 pitanja.</p></div>`;
+      const options=[...app.querySelectorAll('[data-choice]')];
+      const confirm=app.querySelector('#confirm-choice');
+      options.forEach(b=>b.addEventListener('click',()=>{
+        if(confirmed) return;
+        selected=Number(b.dataset.choice);
+        options.forEach(x=>{ const on=Number(x.dataset.choice)===selected;x.classList.toggle('selected',on);x.setAttribute('aria-checked',String(on)); });
+        confirm.disabled=false;
+      }));
+      confirm.addEventListener('click',()=>{
+        if(selected===null) return;
+        if(confirmed) { if(pos===bank.length-1) showResult(); else {pos++;showQuestion();} return; }
+        confirmed=true;const correct=selected===q.correct;
+        answers.push({id:q.id,choice:selected,correct,topic:q.topic});
+        options.forEach(b=>{const idx=Number(b.dataset.choice);b.disabled=true;b.classList.toggle('is-correct',idx===q.correct);b.classList.toggle('is-wrong',idx===selected && !correct);});
+        app.querySelector('#answer-feedback').innerHTML=`<div class="answer-explanation ${correct?'was-correct':'was-incorrect'}"><strong>${correct?'Tačan odgovor':'Netačan odgovor — tačno je '+ 'ABCD'[q.correct]}</strong><p>${clean(q.why)}</p><div class="feedback-refs">Izvori: ${q.refs.map(refChip).join('')}</div></div>`;
+        confirm.disabled=false;confirm.innerHTML=pos===bank.length-1 ? `Završi test ${svg('arrow')}` : `Sledeće pitanje ${svg('arrow')}`;
+      });
+    }
+    function showResult() {
+      const score=answers.filter(a=>a.correct).length;
+      const result={at:new Date().toISOString(),score,total:bank.length,answers:answers.map(x=>({...x}))};
+      const old=Array.isArray(state.quizHistory[lesson.id])?state.quizHistory[lesson.id]:[];
+      state.quizHistory[lesson.id]=old.concat(result).slice(-30);
+      const saved=persist();
+      const wrong=answers.filter(a=>!a.correct);
+      app.innerHTML=`<div class="results-page fade-in"><div class="eyebrow"><span class="eyebrow-line"></span> ZAVRŠEN BRZI TEST</div><div class="results-hero"><div><p>Tvoj rezultat</p><h1>${score}<span> / ${bank.length}</span></h1><strong>${Math.round(score/bank.length*100)}% tačnih odgovora</strong><small>Rezultat je informativan. Nije ocena operativne kompetencije.</small></div><div class="results-ring" style="--score:${score*10}%">${Math.round(score/bank.length*100)}%</div></div>
+      <div class="results-actions"><a class="btn btn-primary" href="#/preslisavanje">${svg('back')} Preslišavanje</a><button class="btn btn-outline" id="try-again">Ponovi test ${svg('arrow')}</button></div>
+      <section class="practice-history"><h3>Pregled odgovora</h3><div class="answer-review">${answers.map((a,i)=>{const q=bank[i];return `<article class="review-row"><span class="review-number ${a.correct?'good':'bad'}">${a.correct?'✓':'×'}</span><div><strong>${i+1}. ${clean(q.q)}</strong><p>${a.correct?'Tačno':'Tvoj odgovor: '+clean(q.options[a.choice])}</p>${!a.correct?`<p><b>Tačno:</b> ${clean(q.options[q.correct])}</p><p>${clean(q.why)}</p>`:''}</div></article>`;}).join('')}</div></section>
+      <p class="quiz-caption">${saved?'Rezultat je sačuvan lokalno na ovom uređaju.':'Rezultat nije mogao biti sačuvan — pregledač je blokirao lokalno skladištenje.'}</p></div>`;
+      app.querySelector('#try-again').addEventListener('click',()=>{pos=0;answers.length=0;showQuestion();window.scrollTo(0,0);});
+    }
+    showQuestion();
+  }
+  function oralTest(lesson) {
+    document.title='OrthoStudy — Usmeno preslišavanje';
+    setNav('practice','Usmeno preslišavanje');
+    const bank=practiceFor(lesson).oral;
+    let pos=0, revealed=false;
+    let draft='';
+    const graded=[];
+    function showCard() {
+      const q=bank[pos];revealed=false;draft='';
+      app.innerHTML=`<div class="practice-page fade-in"><a href="#/preslisavanje" class="back-link">${svg('back')} Preslišavanje</a>
+        <div class="practice-top"><div class="practice-eyebrow">USMENO PRESLIŠAVANJE · ${clean(lesson.title)}</div><span>${pos+1} / ${bank.length}</span></div>
+        <div class="quiz-progress"><div style="width:${Math.round(pos/bank.length*100)}%"></div></div>
+        <section class="question-panel"><div class="question-label">${clean(q.title)} · ODGOVORI NAGLAS</div><h1>${clean(q.q)}</h1>
+        <p class="oral-instruction">Najpre odgovori bez gledanja u knjigu. Tek zatim otkrij model odgovora i uporedi kriterijume.</p>
+        <label class="oral-label" for="oral-notes">Tvoj odgovor (opciono, za sebe)</label><textarea id="oral-notes" class="oral-textarea" placeholder="Zapiši kratke teze ili odgovori naglas bez pisanja..."></textarea>
+        <div id="oral-reveal-area"><button id="reveal" type="button" class="btn btn-primary">Prikaži model odgovora ${svg('book')}</button></div></section>
+        <p class="quiz-caption">Tvoja samoprocena se čuva po završetku preslišavanja. Tekst odgovora se ne šalje niti automatski ocenjuje.</p></div>`;
+      const textarea=app.querySelector('#oral-notes');
+      textarea.addEventListener('input',()=>draft=textarea.value);
+      app.querySelector('#reveal').addEventListener('click',()=>{
+        if(revealed) return;
+        revealed=true;
+        app.querySelector('#oral-reveal-area').innerHTML=`<div class="oral-model"><div class="practice-eyebrow">MODEL ODGOVORA</div><p>${clean(q.answer)}</p><h3>Šta tvoj odgovor treba da sadrži?</h3><ul>${q.rubric.map(line=>`<li>${svg('check')} ${clean(line)}</li>`).join('')}</ul><div class="feedback-refs">Izvori: ${q.refs.map(refChip).join('')}</div></div><h3 class="oral-grade-title">Kako ocenjuješ svoj odgovor?</h3><div class="oral-grade-grid"><button type="button" data-grade="2" class="grade-btn"><strong>Znam</strong><span>Sve ključne tačke</span></button><button type="button" data-grade="1" class="grade-btn"><strong>Delimično</strong><span>Nešto je nedostajalo</span></button><button type="button" data-grade="0" class="grade-btn"><strong>Ponoviti</strong><span>Ne mogu bez pomoći</span></button></div>`;
+        app.querySelectorAll('[data-grade]').forEach(b=>b.addEventListener('click',()=>{
+          graded.push({id:q.id,grade:Number(b.dataset.grade)});
+          if(pos===bank.length-1) showOralResult();else {pos++;showCard();window.scrollTo(0,0);}
+        }));
+      });
+    }
+    function showOralResult(){
+      const known=graded.filter(x=>x.grade===2).length;
+      const partial=graded.filter(x=>x.grade===1).length;
+      const review=graded.filter(x=>x.grade===0).length;
+      const entry={at:new Date().toISOString(),known,partial,review,total:bank.length,grades:graded.map(x=>({...x}))};
+      const prev=Array.isArray(state.oralHistory[lesson.id])?state.oralHistory[lesson.id]:[];
+      state.oralHistory[lesson.id]=prev.concat(entry).slice(-30);
+      const saved=persist();
+      app.innerHTML=`<div class="results-page fade-in"><div class="eyebrow"><span class="eyebrow-line"></span> ZAVRŠENO USMENO PRESLIŠAVANJE</div><div class="oral-summary"><h1>Samoprocena</h1><p>Pregled 8 pitanja na osnovu ocena koje si sam izabrao nakon poređenja sa modelom odgovora.</p><div class="oral-stats"><div><strong>${known}</strong><span>Znam</span></div><div><strong>${partial}</strong><span>Delimično</span></div><div><strong>${review}</strong><span>Ponoviti</span></div></div></div>
+      <div class="results-actions"><a href="#/preslisavanje" class="btn btn-primary">${svg('back')} Preslišavanje</a><button id="oral-again" type="button" class="btn btn-outline">Ponovi pitanja ${svg('arrow')}</button></div>
+      <section class="practice-history"><h3>Po pitanjima</h3><div class="answer-review">${graded.map((g,i)=>`<article class="review-row"><span class="review-number ${g.grade===2?'good':g.grade===0?'bad':'partial'}">${i+1}</span><div><strong>${clean(bank[i].title)}</strong><p>${['Ponoviti','Delimično','Znam'][g.grade]}</p></div></article>`).join('')}</div></section>
+      <p class="quiz-caption">${saved?'Samoprocena je sačuvana lokalno.':'Pregledač je blokirao lokalno čuvanje; rezultat nije trajno sačuvan.'}</p></div>`;
+      app.querySelector('#oral-again').addEventListener('click',()=>{pos=0;graded.length=0;showCard();window.scrollTo(0,0);});
+    }
+    showCard();
+  }
+
   function setNav(selected, breadcrumb) {
     document.getElementById('top-current').textContent = breadcrumb;
     document.querySelector('#nav-home').classList.toggle('active', selected==='home');
     document.querySelector('#nav-lessons').classList.toggle('active', selected==='lessons');
+    document.querySelector('#nav-practice').classList.toggle('active', selected==='practice');
     document.querySelector('#sidebar-progress').style.width = `${completion()}%`;
   }
   function route() {
     const hash = decodeURIComponent(window.location.hash.replace(/^#/, '') || '/');
     if(hash === '/' || hash === '') home();
     else if(hash === '/lekcije') list();
+    else if(hash === '/preslisavanje') practiceIndex();
+    else if(hash.startsWith('/test/')) {
+      const id = hash.split('/')[2]; const lesson = activeLessons.find(x => x.id === id);
+      if(lesson && practiceFor(lesson)) quickTest(lesson); else practiceIndex();
+    }
+    else if(hash.startsWith('/usmeno/')) {
+      const id = hash.split('/')[2]; const lesson = activeLessons.find(x => x.id === id);
+      if(lesson && practiceFor(lesson)) oralTest(lesson); else practiceIndex();
+    }
     else if(hash.startsWith('/lekcija/')) {
       const id = hash.split('/')[2];
       const lesson = data.lessons.find(x=>x.id===id && x.status==='ready');

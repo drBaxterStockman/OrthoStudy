@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#142438" />
   <meta name="description" content="OrthoStudy — lična baza znanja i hirurških pristupa za specijalistički ispit iz ortopedije." />
   <title>OrthoStudy — Hirurški pristupi</title>
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
 
 
   <style>
@@ -36,6 +37,16 @@
 @media(max-width:700px){.practice-grid{grid-template-columns:1fr}.practice-mode{min-height:0}.practice-intro{padding:21px}.practice-intro h2{font-size:21px}.question-panel{padding:22px 17px}.question-panel h1{font-size:25px}.answer-option{padding:12px;gap:10px;font-size:12px}.quiz-action .btn{width:100%}.oral-grade-grid{gap:5px}.grade-btn{padding:12px 4px}.grade-btn strong{font-size:11px}.grade-btn span{font-size:9px}.results-hero{padding:23px}.results-hero h1{font-size:52px}.results-ring{width:95px;height:95px;font-size:17px}.results-ring::after{inset:10px}.practice-history{padding:18px}.lesson-practice-actions .btn{flex-grow:1}}
 @media(max-width:390px){.practice-top{align-items:flex-start;flex-direction:column}.question-panel h1{font-size:23px}.results-hero{gap:9px}.results-ring{height:77px;width:77px}.results-hero h1{font-size:45px}}
 
+/* FAZA 3 — pristup nalogu i proveri autentifikovane serverske funkcije */
+.auth-card{max-width:720px;background:#fff;border:1px solid var(--line);border-radius:15px;padding:clamp(22px,4vw,39px);box-shadow:var(--shadow)}
+.auth-card h2{font-size:22px;letter-spacing:-.5px;margin:5px 0 12px}.auth-card p,.auth-card li{font-size:13px;line-height:1.85;color:#657b83}.auth-card label{display:block;font-size:12px;font-weight:750;color:#315c52;margin:18px 0 8px}
+.auth-input{width:100%;min-height:46px;padding:12px 15px;background:#fbfcfb;border:1px solid #c9dad4;border-radius:10px;font:inherit;font-size:16px;color:#233b45}
+.auth-input:focus{outline:3px solid #b7e2d6;outline-offset:2px}.auth-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:18px}.auth-row .btn{font-size:12px}
+.auth-status{font-size:12px;padding:14px 16px;border-radius:10px;background:#eef6f2;color:#315e53;line-height:1.65;margin-top:16px;min-height:22px;white-space:pre-line}
+.auth-status.error{background:#fff0eb;color:#99503e}.auth-status:empty{display:none}.auth-step{background:#f0f6f2;border-left:3px solid #84b7a6;border-radius:7px;padding:14px 16px;font-size:12px;line-height:1.75;color:#4b6b61;margin:18px 0}
+.auth-note{font-size:11px;line-height:1.7;color:#83949b;margin:18px 0 0}.auth-check-list{margin:15px 0 0;padding-left:20px}.auth-account{display:flex;align-items:flex-start;gap:14px;padding:15px 18px;border:1px solid #dae9e3;border-radius:12px;background:#f4faf7;overflow-wrap:anywhere}
+.auth-account strong{font-size:13px;color:#2b5b4c}.auth-account p{margin:4px 0 0}.auth-indicator{font-size:10px;color:#abc9bd;font-weight:600;margin:16px 16px 8px;display:block;overflow-wrap:anywhere}.auth-cta{display:flex;align-items:flex-start;gap:12px;background:#edf5f1;border:1px solid #d1e8dd;padding:16px 19px;border-radius:13px;margin-top:17px;line-height:1.7}.auth-cta p{font-size:12px;color:#607c73;margin:3px 0 0}.auth-cta strong{font-size:13px}.auth-cta svg{color:#277b5d}.auth-cta a{color:#236d53;text-decoration:underline;font-weight:750}
+@media(max-width:700px){.auth-indicator{display:none}.sidebar nav .nav-item{padding:10px 9px}.auth-card{padding:23px 20px}.auth-card h2{font-size:20px}}
 </style>
 </head>
 <body>
@@ -51,6 +62,7 @@
     <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3 2 21h20L12 3Zm0 7v5m0 3h.01"/></symbol>
     <symbol id="i-note" viewBox="0 0 24 24"><path d="M5 3h14v18H5zM9 8h6M9 12h6M9 16h4"/></symbol>
     <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4V3Z"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 21v-2a7.5 7.5 0 0 1 15 0v2"/></symbol>
     <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2Z"/></symbol>
   </svg>
   <div class="app-shell">
@@ -64,14 +76,15 @@
         <a href="#/" id="nav-home" class="nav-item active"><svg><use href="#i-grid"/></svg><span>Pregled</span></a>
         <a href="#/lekcije" id="nav-lessons" class="nav-item"><svg><use href="#i-book"/></svg><span>Moje lekcije</span></a>
         <a href="#/preslisavanje" id="nav-practice" class="nav-item"><svg><use href="#i-spark"/></svg><span>Preslišavanje</span></a>
+        <a href="#/nalog" id="nav-account" class="nav-item" aria-label="Moj nalog"><svg><use href="#i-user"/></svg><span>Moj nalog</span></a>
       </nav>
-      <div class="sidebar-bottom">
+      <div class="sidebar-bottom"><span id="sidebar-auth" class="auth-indicator">Nalog nije povezan</span>
         <span class="sidebar-rule"></span>
         <p>KOLOKVIJUM 01</p>
         <strong>Hirurški pristupi</strong>
         <small>Hoppenfeld · AO · Orthobullets</small>
         <div class="small-progress"><div id="sidebar-progress"></div></div>
-        <span class="sidebar-foot">Faza 2 · test i usmeno preslišavanje</span>
+        <span class="sidebar-foot">Faza 3 · prijava i zaštita API-ja</span>
       </div>
     </aside>
     <main class="main">
@@ -80,13 +93,13 @@
         <span class="top-pill">01 / 12 KOLOKVIJUMA</span>
       </header>
       <div id="app" class="content" aria-live="polite"></div>
-      <footer class="footer"><span>OrthoStudy · Verzija 0.2</span><span>Za učenje uz mentora, ne za samostalno izvođenje zahvata.</span></footer>
+      <footer class="footer"><span>OrthoStudy · Verzija 0.3</span><span>Za učenje uz mentora, ne za samostalno izvođenje zahvata.</span></footer>
     </main>
   </div>
   <script>
 /* Sadržaj je razdvojen od interfejsa, tako da se buduće lekcije dodaju ovde. */
 window.ORTHO_DATA = {
-  version: "0.2.0",
+  version: "0.3.0",
   references: {
     ao: { label: "AO Surgery Reference", url: "https://surgeryreference.aofoundation.org/orthopedic-trauma/adult-trauma/femoral-shaft/approach/lateral-approach", detail: "Lateral approach to the femoral shaft" },
     ob: { label: "Orthobullets", url: "https://www.orthobullets.com/approaches/12024/femur-lateral-approach", detail: "Femur Lateral Approach" },
@@ -458,6 +471,7 @@ window.ORTHO_DATA.practice = {
 };
 
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.0/dist/umd/supabase.min.js"></script>
   <script>
 (() => {
   'use strict';
@@ -466,6 +480,49 @@ window.ORTHO_DATA.practice = {
   const STORAGE = 'orthostudy-v1-state';
   const svg = name => `<svg class="icon" aria-hidden="true"><use href="#i-${name}"/></svg>`;
   let state = readState();
+  // Publishable key is a public client identifier, not a privileged API secret.
+  // NEVER place Supabase secret/service_role keys or OpenAI API keys here.
+  const SB_URL = "https://zamsyaprdbqxgfshyvft.supabase.co";
+  const SB_PUBLIC_KEY = "sb_publishable_30yd_i9VxUTCMJgyxJA-0g_iwfn4Tnd";
+  const EDGE_URL = SB_URL + "/functions/v1/grade-oral-answer";
+  const LOGIN_REDIRECT = "https://drbaxterstockman.github.io/OrthoStudy/";
+  let authClient = null;
+  let activeSession = null;
+  let authLoading = true;
+  let authProblem = "";
+  try {
+    if (window.supabase && typeof window.supabase.createClient === 'function') {
+      authClient = window.supabase.createClient(SB_URL, SB_PUBLIC_KEY, {
+        auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true, storageKey: 'orthostudy-auth-v03' }
+      });
+    } else authProblem = 'Modul za prijavu nije učitan. Proveri internet vezu i osveži stranicu.';
+  } catch(e) { authProblem = 'Prijavljivanje nije moglo da se pokrene: ' + (e?.message || 'nepoznata greška'); }
+  function refreshAccountLink(){
+    const label = document.getElementById('sidebar-auth');
+    if(label) label.textContent = activeSession?.user?.email ? 'Prijavljen: ' + activeSession.user.email : 'Prijava nije aktivna';
+    const nav = document.querySelector('#nav-account');
+    if(nav) nav.title = activeSession?.user?.email ? 'Prijavljen nalog' : 'Prijavi se';
+  }
+  if (authClient) {
+    authClient.auth.onAuthStateChange((_event, session) => {
+      activeSession = session;
+      authLoading = false;
+      refreshAccountLink();
+      if (window.location.hash === '#/nalog') accountPage();
+    });
+    authClient.auth.getSession().then(({data,error})=>{
+      authLoading = false;
+      if(error) authProblem = error.message || 'Prijava nije mogla biti potvrđena.';
+      activeSession = data?.session || null;
+      refreshAccountLink();
+      if (window.location.hash === '#/nalog') accountPage();
+    }).catch(err=>{
+      authLoading = false;
+      authProblem = err.message || 'Greška tokom učitavanja naloga.';
+      if(window.location.hash === '#/nalog') accountPage();
+    });
+  } else authLoading = false;
+
 
   function readState() {
     try {
@@ -614,6 +671,7 @@ window.ORTHO_DATA.practice = {
         <article class="practice-mode"><div class="mode-icon">${svg('check')}</div><div class="practice-eyebrow">10 PITANJA · PONUĐENI ODGOVORI</div><h3>Brzi test</h3><p>Izaberi odgovor, proveri objašnjenje i na kraju vidi rezultat, greške i istoriju pokušaja.</p><div class="mode-bottom"><span>${last ? `Poslednji rezultat: ${last.score}/${last.total}` : 'Još nije rađen'}</span><a class="btn btn-primary" href="#/test/${lesson.id}">Pokreni test ${svg('arrow')}</a></div></article>
         <article class="practice-mode"><div class="mode-icon">${svg('note')}</div><div class="practice-eyebrow">8 PITANJA · SAMOPROCENA</div><h3>Usmeno preslišavanje</h3><p>Odgovori svojim rečima, otkrij model odgovora, proveri kriterijume i sam proceni znanje.</p><div class="mode-bottom"><span>Bez automatske AI ocene</span><a class="btn btn-primary" href="#/usmeno/${lesson.id}">Počni usmeno ${svg('arrow')}</a></div></article>
       </div>
+      <div class="auth-cta">${svg('user')}<div><strong>Prijava za buduće AI ocenjivanje</strong><p>Poveži nalog i testiraj bezbednu serversku funkciju. <a href="#/nalog">Otvori moj nalog</a>.</p></div></div>
       <div class="practice-history"><h3>Istorija brzog testa</h3>${historyRows(state.quizHistory[lesson.id],false)}</div>
       <div class="practice-history"><h3>Istorija usmenog preslišavanja</h3>${historyRows(state.oralHistory[lesson.id],true)}</div>
       <div class="notice light">${svg('note')} <span>Beleške, oznake pročitanog i rezultati ostaju u ovom pregledaču i na ovom uređaju. Ne sinhronizuju se između telefona i računara.</span></div>`;
@@ -683,7 +741,7 @@ window.ORTHO_DATA.practice = {
         <p class="oral-instruction">Najpre odgovori bez gledanja u knjigu. Tek zatim otkrij model odgovora i uporedi kriterijume.</p>
         <label class="oral-label" for="oral-notes">Tvoj odgovor (opciono, za sebe)</label><textarea id="oral-notes" class="oral-textarea" placeholder="Zapiši kratke teze ili odgovori naglas bez pisanja..."></textarea>
         <div id="oral-reveal-area"><button id="reveal" type="button" class="btn btn-primary">Prikaži model odgovora ${svg('book')}</button></div></section>
-        <p class="quiz-caption">Tvoja samoprocena se čuva po završetku preslišavanja. Tekst odgovora se ne šalje niti automatski ocenjuje.</p></div>`;
+        <p class="quiz-caption">Tvoja samoprocena se čuva po završetku preslišavanja. Tekst odgovora se ne šalje niti automatski ocenjuje. <a href="#/nalog" style="color:#26735c;text-decoration:underline">Priprema AI prijave</a>.</p></div>`;
       const textarea=app.querySelector('#oral-notes');
       textarea.addEventListener('input',()=>draft=textarea.value);
       app.querySelector('#reveal').addEventListener('click',()=>{
@@ -713,11 +771,89 @@ window.ORTHO_DATA.practice = {
     showCard();
   }
 
+  // Auth UI: no passwords or private keys are ever requested or stored in OrthoStudy.
+  function accountPage(){
+    document.title='OrthoStudy — Prijava i sigurnost';
+    setNav('account', 'Moj nalog');
+    const signedIn=Boolean(activeSession?.user?.id);
+    const email=signedIn ? clean(activeSession.user.email || 'Prijavljen korisnik') : '';
+    app.innerHTML=`<div class="page-header fade-in"><div class="eyebrow"><span class="eyebrow-line"></span> ORTHOSTUDY / FAZA 3</div><h1>Moj nalog<span class="punct">.</span></h1><p>Bezbedna prijava je pripremljena za buduće AI ocenjivanje odgovora. Lekcije i postojeće preslišavanje i dalje rade bez prijave.</p></div>
+      <div class="auth-card fade-in"><div class="practice-eyebrow">${signedIn?'POVEZANO SA SUPABASE':'PRIJAVA E-MAILOM'}</div>
+      ${signedIn ? `<div class="auth-account"><span class="mode-icon">${svg('check')}</span><div><strong>Uspešno si prijavljen</strong><p>${email}</p></div></div>
+        <p>Možeš proveriti da li zaštićena serverska funkcija prihvata tvoju sesiju. Ovo još nije AI ocenjivanje: ne šaljemo tvoje medicinske odgovore niti trošimo OpenAI kredite.</p>
+        <div class="auth-row"><button id="check-server" type="button" class="btn btn-primary">Proveri vezu sa serverom ${svg('arrow')}</button><button id="sign-out" type="button" class="btn btn-outline">Odjavi se</button></div>
+        <div id="auth-feedback" class="auth-status" role="status" aria-live="polite"></div>
+        <p class="auth-note">Ako provera pokaže 401, proverićemo podešavanje „Verify JWT with legacy secret“ u Edge Function. Autorizacija unutar funkcije i dalje mora ostati uključena.</p>` : `<h2>Prijavi se bez lozinke</h2><p>Unesi adresu e-maila koja je član tvoje Supabase OrthoStudy organizacije. Stići će ti jednokratni link za potvrdu.</p>
+        <form id="login-form"><label for="login-email">E-mail adresa</label><input class="auth-input" id="login-email" name="email" type="email" required autocomplete="email" inputmode="email" placeholder="ime@domen.com" maxlength="254" />
+        <div class="auth-row"><button id="send-login" type="submit" class="btn btn-primary">Pošalji prijavni link ${svg('arrow')}</button></div></form>
+        <div id="auth-feedback" class="auth-status" role="status" aria-live="polite"></div>
+        <div class="auth-step"><strong>Kako radi?</strong> Nakon slanja otvori poruku u e-mailu i dodirni link. On te vraća u OrthoStudy i automatski prijavljuje.</div>
+        <p class="auth-note">Napomena: Supabase-ov podrazumevani servis šalje prijavne poruke samo na adrese članova organizacije, dok ne povežemo sopstveni SMTP. Nemoj unositi Apple relay adresu ako nije član te organizacije.</p>`}
+        <div class="auth-cta">${svg('spark')}<div><strong>AI ispitivač — sledeća faza</strong><p>Autentifikacija se ovde testira. AI ocena, dopunska pitanja i čuvanje odgovora na serveru još nisu uključeni. <a href="#/preslisavanje">Nastavi obično preslišavanje</a>.</p></div></div>
+      </div>`;
+    if(authLoading) showAuth('Proveravam sesiju…');
+    else if(authProblem) showAuth(authProblem,true);
+    if(!authClient) {
+      const b=app.querySelector('#send-login'); if(b) b.disabled=true;
+      return;
+    }
+    const form=app.querySelector('#login-form');
+    if(form) form.addEventListener('submit',async (e)=>{
+      e.preventDefault();
+      const email=form.querySelector('#login-email').value.trim();
+      const b=app.querySelector('#send-login');b.disabled=true;
+      showAuth('Šaljem prijavni link…');
+      try {
+        const {error}=await authClient.auth.signInWithOtp({email,options:{emailRedirectTo:LOGIN_REDIRECT}});
+        if(error) throw error;
+        showAuth('Ako je adresa dozvoljena, prijavni link je poslat. Otvori e-mail poruku na ovom telefonu i dodirni link.');
+      }catch(err){showAuth('Nije poslato: '+(err.message||'greška')+'. Proveri da li je e-mail član Supabase organizacije.',true)}
+      finally{b.disabled=false}
+    });
+    const check=app.querySelector('#check-server');
+    if(check) check.addEventListener('click',async ()=>{
+      check.disabled=true;
+      showAuth('Proveravam sesiju i pristup funkciji…');
+      try{
+        const {data,error}=await authClient.auth.getSession();
+        if(error||!data?.session?.access_token) throw new Error('Sesija nije dostupna — prijavi se ponovo.');
+        const abort=new AbortController();
+        const timeout=setTimeout(()=>abort.abort(),12000);
+        let res;
+        try{
+          res=await fetch(EDGE_URL,{
+            method:'POST',
+            headers:{'Authorization':'Bearer '+data.session.access_token,'apikey':SB_PUBLIC_KEY,'Content-Type':'application/json'},
+            body:JSON.stringify({probe:true}),
+            signal:abort.signal
+          });
+        } finally {clearTimeout(timeout)}
+        let payload={};try{payload=await res.json()}catch{}
+        if(!res.ok) throw new Error('HTTP '+res.status+' — '+(typeof payload.error==='string'?payload.error:'Proveri JWT podešavanje i zapis funkcije.'));
+        if(payload.ok===true && payload.aiEnabled===false) showAuth('Veza je uspela: zaštićena funkcija odgovara prijavljenom korisniku. AI ocenjivanje još nije uključeno.');
+        else if(payload.ok===true) showAuth('Funkcija odgovara, ali njen status nije očekivan. AI nije testiran.');
+        else throw new Error('Neočekivan odgovor serverske funkcije.');
+      }catch(err){showAuth('Provera nije uspela: '+(err.name==='AbortError'?'isteklo vreme za odgovor':(err.message||'greška')),true)}
+      finally{check.disabled=false}
+    });
+    const out=app.querySelector('#sign-out');
+    if(out) out.addEventListener('click',async()=>{
+      out.disabled=true;
+      try{const {error}=await authClient.auth.signOut();if(error)throw error;activeSession=null;accountPage()}
+      catch(err){showAuth('Odjava nije uspela: '+(err.message||'greška'),true);out.disabled=false}
+    });
+  }
+  function showAuth(message,isError=false){
+    const box=app.querySelector('#auth-feedback');
+    if(box){box.textContent=message;box.classList.toggle('error',isError)}
+  }
+
   function setNav(selected, breadcrumb) {
     document.getElementById('top-current').textContent = breadcrumb;
     document.querySelector('#nav-home').classList.toggle('active', selected==='home');
     document.querySelector('#nav-lessons').classList.toggle('active', selected==='lessons');
     document.querySelector('#nav-practice').classList.toggle('active', selected==='practice');
+    document.querySelector('#nav-account').classList.toggle('active', selected==='account');
     document.querySelector('#sidebar-progress').style.width = `${completion()}%`;
   }
   function route() {
@@ -725,6 +861,7 @@ window.ORTHO_DATA.practice = {
     if(hash === '/' || hash === '') home();
     else if(hash === '/lekcije') list();
     else if(hash === '/preslisavanje') practiceIndex();
+    else if(hash === '/nalog') accountPage();
     else if(hash.startsWith('/test/')) {
       const id = hash.split('/')[2]; const lesson = activeLessons.find(x => x.id === id);
       if(lesson && practiceFor(lesson)) quickTest(lesson); else practiceIndex();

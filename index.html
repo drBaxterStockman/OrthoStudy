@@ -93,7 +93,7 @@
         <span class="top-pill">01 / 12 KOLOKVIJUMA</span>
       </header>
       <div id="app" class="content" aria-live="polite"></div>
-      <footer class="footer"><span>OrthoStudy · Verzija 0.3</span><span>Za učenje uz mentora, ne za samostalno izvođenje zahvata.</span></footer>
+      <footer class="footer"><span>OrthoStudy · Verzija 0.3.1</span><span>Za učenje uz mentora, ne za samostalno izvođenje zahvata.</span></footer>
     </main>
   </div>
   <script>
@@ -485,7 +485,6 @@ window.ORTHO_DATA.practice = {
   const SB_URL = "https://zamsyaprdbqxgfshyvft.supabase.co";
   const SB_PUBLIC_KEY = "sb_publishable_30yd_i9VxUTCMJgyxJA-0g_iwfn4Tnd";
   const EDGE_URL = SB_URL + "/functions/v1/grade-oral-answer";
-  const LOGIN_REDIRECT = "https://drbaxterstockman.github.io/OrthoStudy/";
   let authClient = null;
   let activeSession = null;
   let authLoading = true;
@@ -771,7 +770,8 @@ window.ORTHO_DATA.practice = {
     showCard();
   }
 
-  // Auth UI: no passwords or private keys are ever requested or stored in OrthoStudy.
+  // Auth UI: password is sent only via Supabase Auth over HTTPS; never saved by our app.
+  // Never log credentials or include them in localStorage, URLs, analytics, or GitHub.
   function accountPage(){
     document.title='OrthoStudy — Prijava i sigurnost';
     setNav('account', 'Moj nalog');
@@ -783,12 +783,15 @@ window.ORTHO_DATA.practice = {
         <p>Možeš proveriti da li zaštićena serverska funkcija prihvata tvoju sesiju. Ovo još nije AI ocenjivanje: ne šaljemo tvoje medicinske odgovore niti trošimo OpenAI kredite.</p>
         <div class="auth-row"><button id="check-server" type="button" class="btn btn-primary">Proveri vezu sa serverom ${svg('arrow')}</button><button id="sign-out" type="button" class="btn btn-outline">Odjavi se</button></div>
         <div id="auth-feedback" class="auth-status" role="status" aria-live="polite"></div>
-        <p class="auth-note">Ako provera pokaže 401, proverićemo podešavanje „Verify JWT with legacy secret“ u Edge Function. Autorizacija unutar funkcije i dalje mora ostati uključena.</p>` : `<h2>Prijavi se bez lozinke</h2><p>Unesi adresu e-maila koja je član tvoje Supabase OrthoStudy organizacije. Stići će ti jednokratni link za potvrdu.</p>
-        <form id="login-form"><label for="login-email">E-mail adresa</label><input class="auth-input" id="login-email" name="email" type="email" required autocomplete="email" inputmode="email" placeholder="ime@domen.com" maxlength="254" />
-        <div class="auth-row"><button id="send-login" type="submit" class="btn btn-primary">Pošalji prijavni link ${svg('arrow')}</button></div></form>
+        <p class="auth-note">Ako provera pokaže 401, proverićemo podešavanje „Verify JWT with legacy secret“ u Edge Function. Autorizacija unutar funkcije i dalje mora ostati uključena.</p>` : `<h2>Prijavi se na OrthoStudy</h2><p>Koristi e-mail adresu i lozinku korisničkog naloga koji si kreirao u Supabase → Authentication → Users. Nije potrebna Apple relay adresa niti prijavni link.</p>
+        <form id="login-form" autocomplete="on">
+          <label for="login-email">E-mail adresa</label><input class="auth-input" id="login-email" name="email" type="email" required autocomplete="username" inputmode="email" placeholder="ime@gmail.com" maxlength="254" />
+          <label for="login-password">Lozinka</label><input class="auth-input" id="login-password" name="password" type="password" required autocomplete="current-password" placeholder="Unesi svoju lozinku" />
+          <div class="auth-row"><button id="send-login" type="submit" class="btn btn-primary">Prijavi se ${svg('arrow')}</button></div>
+        </form>
         <div id="auth-feedback" class="auth-status" role="status" aria-live="polite"></div>
-        <div class="auth-step"><strong>Kako radi?</strong> Nakon slanja otvori poruku u e-mailu i dodirni link. On te vraća u OrthoStudy i automatski prijavljuje.</div>
-        <p class="auth-note">Napomena: Supabase-ov podrazumevani servis šalje prijavne poruke samo na adrese članova organizacije, dok ne povežemo sopstveni SMTP. Nemoj unositi Apple relay adresu ako nije član te organizacije.</p>`}
+        <div class="auth-step"><strong>Kako radi?</strong> Prijavljuješ se podacima koje si upravo postavio u Supabase-u. Nakon prijave pojaviće se dugme „Proveri vezu sa serverom“.</div>
+        <p class="auth-note">Lozinku obrađuje Supabase Auth putem HTTPS veze. OrthoStudy ne čuva lozinku u svojim beleškama, lokalnim podacima niti na GitHub-u. Ako prijava ne uspe, proveri korisnički nalog i status potvrde e-mail adrese u Supabase-u.</p>`}
         <div class="auth-cta">${svg('spark')}<div><strong>AI ispitivač — sledeća faza</strong><p>Autentifikacija se ovde testira. AI ocena, dopunska pitanja i čuvanje odgovora na serveru još nisu uključeni. <a href="#/preslisavanje">Nastavi obično preslišavanje</a>.</p></div></div>
       </div>`;
     if(authLoading) showAuth('Proveravam sesiju…');
@@ -800,15 +803,28 @@ window.ORTHO_DATA.practice = {
     const form=app.querySelector('#login-form');
     if(form) form.addEventListener('submit',async (e)=>{
       e.preventDefault();
+      if(!authClient) return;
       const email=form.querySelector('#login-email').value.trim();
-      const b=app.querySelector('#send-login');b.disabled=true;
-      showAuth('Šaljem prijavni link…');
+      const passwordEl=form.querySelector('#login-password');
+      const password=passwordEl.value;
+      const b=form.querySelector('#send-login');
+      b.disabled=true;
+      showAuth('Proveravam korisnički nalog…');
       try {
-        const {error}=await authClient.auth.signInWithOtp({email,options:{emailRedirectTo:LOGIN_REDIRECT}});
+        const {data,error}=await authClient.auth.signInWithPassword({email,password});
         if(error) throw error;
-        showAuth('Ako je adresa dozvoljena, prijavni link je poslat. Otvori e-mail poruku na ovom telefonu i dodirni link.');
-      }catch(err){showAuth('Nije poslato: '+(err.message||'greška')+'. Proveri da li je e-mail član Supabase organizacije.',true)}
-      finally{b.disabled=false}
+        if(!data?.session?.access_token) throw new Error('Supabase nije vratio aktivnu sesiju.');
+        passwordEl.value='';
+        activeSession=data.session;
+        accountPage();
+        showAuth('Prijava je uspela. Sada možeš proveriti vezu sa serverom.');
+      }catch(err){
+        passwordEl.value='';
+        const reason=(err?.message || '').toLowerCase();
+        if(reason.includes('email not confirmed')) showAuth('E-mail adresa naloga nije potvrđena. Proveri korisnika u Supabase → Authentication → Users.',true);
+        else if(reason.includes('invalid login credentials')) showAuth('Pogrešna e-mail adresa ili lozinka. Proveri podatke koje si uneo prilikom kreiranja korisnika.',true);
+        else showAuth('Prijava nije uspela: '+(err?.message || 'nepoznata greška'),true);
+      } finally {if(b.isConnected)b.disabled=false;}
     });
     const check=app.querySelector('#check-server');
     if(check) check.addEventListener('click',async ()=>{
